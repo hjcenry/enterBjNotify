@@ -2,10 +2,12 @@ import requests
 import jjz_interface
 import json
 
+import launch
+
 
 def query_apply_status():
     url = "https://enterbj.zhongchebaolian.com/enterbj/platform/enterbj/entercarlist"
-    config = jjz_interface.JjzInterface.config
+    config = launch.config
     payload = "userid=%s" % config.get_config('userid', 'jjz')
     payload += "&appkey=%s" % config.get_config('appkey', 'jjz')
     payload += "&deviceid=%s" % config.get_config('deviceid', 'jjz')
